@@ -13,7 +13,9 @@ Then
 
 ```
 cd ./tools
-echo "This is the part that takes a while"; ./getcorpora.sh && tokenize.sh
+chmod +x *.sh
+export INSTALL_HOME=/home/vagrant
+echo "This is the part that takes a while"; ./getcorpora.sh $INSTALL_HOME && ./en-sp-align_words.sh $INSTALL_HOME /home/vagrant/tools/mgiza_configfile
 ```
 
 Wait. A long time. 
@@ -34,6 +36,7 @@ drwx------ 2 vagrant vagrant 4096 Nov 23 15:29 .cache/
 drwx------ 2 vagrant vagrant 4096 Nov 23 15:29 .ssh/
 drwxr-xr-x 4 vagrant vagrant 4096 Nov 23 15:33 tools/
 ```
+
 
 The "tools" directory is the one you'll want to do your work out of. Note: At no time is `sudo` necessary to use these tools. 
 
